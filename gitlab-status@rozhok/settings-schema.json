@@ -1,0 +1,24 @@
+{
+  "gitlab-token": {
+    "type": "entry",
+    "default": "",
+    "description": "GitLab API Token",
+    "tooltip": "Your personal GitLab API token with read_api scope"
+  },
+  "gitlab-url": {
+    "type": "entry",
+    "default": "https://gitlab.com/api/v4",
+    "description": "GitLab API URL",
+    "tooltip": "URL of the GitLab API (for self-hosted instances)"
+  },
+  "update-interval": {
+    "type": "spinbutton",
+    "default": 60,
+    "min": 10,
+    "max": 600,
+    "step": 10,
+    "units": "seconds",
+    "description": "Update Interval",
+    "tooltip": "Interval between updates (seconds)"
+  }
+}
