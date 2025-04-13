@@ -61,7 +61,7 @@ GitLabStatusApplet.prototype = {
     // Initialize menu
     this.menuManager = new PopupMenu.PopupMenuManager(this);
     this.menu = new Applet.AppletPopupMenu(this, orientation);
-    this.menu.box.style = 'padding: 0px; margin: 0px;';
+    this.menu.box.style = "padding: 0px; margin: 0px;";
     this.menuManager.addMenu(this.menu);
 
     // Items container
@@ -89,8 +89,6 @@ GitLabStatusApplet.prototype = {
     if (this.gitlab_token == null) {
       return;
     }
-    let projectsUrl = this.gitlab_url + "/projects?membership=true&per_page=100";
-
     this._getProjects();
 
     return true;
@@ -98,7 +96,6 @@ GitLabStatusApplet.prototype = {
 
   _getProjects: function () {
     let projectsUrl = this.gitlab_url + "/projects?membership=true&per_page=100";
-    global.log("Retrieving GitLab projects");
     this._makeRequest(projectsUrl, (data) => {
       this._getProjectPipelines(data);
     });
@@ -118,7 +115,6 @@ GitLabStatusApplet.prototype = {
       });
     } catch (e) {
       global.logError("GitLab Pipeline Status: Error making request: " + e);
-      callback(false, null);
     }
   },
 
@@ -185,8 +181,8 @@ GitLabStatusApplet.prototype = {
 
       // Create a horizontal box layout
       let hbox = new St.BoxLayout({
-          style_class: 'popup-menu-item',
-          style: 'padding: 2px; margin: 0;'
+          style_class: "popup-menu-item",
+          style: "padding: 2px; margin: 0;"
         }
       );
 
@@ -198,8 +194,8 @@ GitLabStatusApplet.prototype = {
 
       // Project name with branch
       let label = new St.Label({
-        text: pipeline.project_name + ' (' + pipeline.ref + ')',
-        style_class: 'popup-menu-item-label'
+        text: pipeline.project_name + " (" + pipeline.ref + ")",
+        style_class: "popup-menu-item-label"
       });
       hbox.add(label);
 
@@ -208,7 +204,7 @@ GitLabStatusApplet.prototype = {
       item.addActor(hbox);
 
       // URL to open when clicked
-      item.connect('activate', function () {
+      item.connect("activate", function () {
         Util.spawnCommandLine("xdg-open " + pipeline.url);
       });
 
