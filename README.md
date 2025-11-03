@@ -23,3 +23,9 @@ Then go to applet settings and set up your private `read_api` GitLab key.
 - Projects selection
 - GitHub support
 - Customize pipelines creation date
+
+## Development
+
+### Debugging
+
+`tail -F  ~/.xsession-errors`
