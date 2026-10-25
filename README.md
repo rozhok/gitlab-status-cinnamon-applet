@@ -7,7 +7,9 @@ Tray icon shows aggregated status of pipelines run in the last two days:
 - Green: all pipelines succeeded
 - Gray: no pipelines were run in the last two days
 
-![Screenshot](screenshot.png)
+<p align="center">
+  <img src="screenshot.png" alt="Screenshot">
+</p>
 
 ## Installation
 
